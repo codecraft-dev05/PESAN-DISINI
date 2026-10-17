@@ -1127,7 +1127,7 @@ footer{
 
 <script>
 
-const nomorWA = "6285385940127";
+const nomorWA = "6285355848429";
 
 let jasaDipilih = "";
 
@@ -1151,8 +1151,8 @@ function pilihJasa(element,nama,harga){
 
 
 /* WHATSAPP */
-
-function pesanWhatsApp(){
+  
+  function pesanWhatsApp(){
 
   if(jasaDipilih === ""){
 
@@ -1169,28 +1169,27 @@ function pesanWhatsApp(){
       .trim();
 
   let pesan =
-    "Halo, saya ingin memesan jasa website.%0A%0A" +
-    "Jasa: " +
-    encodeURIComponent(jasaDipilih);
+`Halo 👋
 
-  if(catatan !== ""){
+Saya tertarik untuk memesan jasa pembuatan website.
 
-    pesan +=
-      "%0A%0ACatatan:%0A" +
-      encodeURIComponent(catatan);
+📌 Jasa: ${jasaDipilih}
 
-  }
+📝 Catatan:
+${catatan || "Belum ada catatan."}
+
+Mohon informasinya.
+Terima kasih 🙏`;
 
   window.open(
     "https://wa.me/" +
     nomorWA +
     "?text=" +
-    pesan,
+    encodeURIComponent(pesan),
     "_blank"
   );
 
 }
-
 
 /* KONTAK */
 
