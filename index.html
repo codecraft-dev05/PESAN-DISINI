@@ -792,6 +792,60 @@ footer{
   }
 
 }
+  /* ================= DOMAIN ================= */
+
+.domain-box{
+  margin-top:20px;
+}
+
+.domain-toggle{
+  width:100%;
+  padding:15px;
+  border:1px solid #00eaff;
+  border-radius:12px;
+  background:#080808;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.domain-toggle:hover{
+  box-shadow:0 0 20px rgba(0,234,255,.25);
+}
+
+#domainOptions{
+  margin-top:10px;
+}
+
+#domainOptions button{
+  width:100%;
+  padding:13px;
+  margin-top:8px;
+  border:1px solid #292929;
+  border-radius:10px;
+  background:#111;
+  color:white;
+  cursor:pointer;
+  text-align:left;
+}
+
+#domainOptions button:hover{
+  border-color:#00eaff;
+  box-shadow:0 0 15px rgba(0,234,255,.2);
+}
+
+.domain-info{
+  color:#777;
+  font-size:12px;
+  line-height:1.6;
+  margin:12px 0;
+}
+
+#domainDipilih{
+  margin-top:12px;
+  color:#00eaff;
+  font-size:13px;
+}
 </style>
 </head>
 
@@ -1080,6 +1134,37 @@ footer{
     </button>
 
   </div>
+  <!-- DOMAIN -->
+
+<div class="domain-box">
+
+  <button class="domain-toggle" onclick="toggleDomain()">
+    🌐 Pilih Domain <span id="domainArrow">▼</span>
+  </button>
+
+  <div id="domainOptions" style="display:none;">
+
+    <p class="domain-info">
+      Domain adalah alamat website, seperti alamat rumah tetapi untuk website.
+    </p>
+
+    <button onclick="pilihDomain('Tanpa Domain Custom', 0)">
+      🆓 Tanpa Domain — Gratis
+    </button>
+
+    <button onclick="pilihDomain('Domain .com', 150000)">
+      🌐 Domain .com — Rp150K/tahun
+    </button>
+
+    <button onclick="pilihDomain('Domain .id', 200000)">
+      🇮🇩 Domain .id — Rp200K/tahun
+    </button>
+
+  </div>
+
+  <p id="domainDipilih"></p>
+
+</div>
 
 </section>
 
@@ -1229,7 +1314,39 @@ function hubungi(){
   );
 
 }
+/* ================= DOMAIN ================= */
 
+let domainDipilih = "Tanpa Domain Custom";
+let hargaDomain = 0;
+
+function toggleDomain(){
+
+  const options = document.getElementById("domainOptions");
+  const arrow = document.getElementById("domainArrow");
+
+  if(options.style.display === "none"){
+
+    options.style.display = "block";
+    arrow.textContent = "▲";
+
+  }else{
+
+    options.style.display = "none";
+    arrow.textContent = "▼";
+
+  }
+
+}
+
+function pilihDomain(nama,harga){
+
+  domainDipilih = nama;
+  hargaDomain = harga;
+
+  document.getElementById("domainDipilih").innerHTML =
+    "✅ Domain dipilih: <b>" + nama + "</b>";
+
+}
 </script>
 
 </body>
