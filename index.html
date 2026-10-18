@@ -1098,16 +1098,30 @@ footer{
     </div>
 
 
-  </div>
-    Domain — Gratis
+ <!-- DOMAIN -->
+
+<div class="domain-box">
+
+  <button class="domain-toggle" onclick="toggleDomain()">
+    🌐 Pilih Domain <span id="domainArrow">▼</span>
+  </button>
+
+  <div id="domainOptions" style="display:none;">
+
+    <p class="domain-info">
+      Apakah kamu ingin menggunakan domain custom?
+    </p>
+
+    <button onclick="pilihDomain('Tanpa Domain Custom', 0)">
+      ❌ Tidak, saya tidak mau
     </button>
 
     <button onclick="pilihDomain('Domain .com', 150000)">
-      🌐 Domain .com — Rp150K/tahun
+      🌐 Ya, saya mau domain .com
     </button>
 
     <button onclick="pilihDomain('Domain .id', 200000)">
-      🇮🇩 Domain .id — Rp200K/tahun
+      🇮🇩 Ya, saya mau domain .id
     </button>
 
   </div>
