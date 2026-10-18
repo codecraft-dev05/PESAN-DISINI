@@ -1108,7 +1108,7 @@ footer{
 
     </div>
     
- <!-- DOMAIN -->
+ !-- DOMAIN -->
 
 <div class="domain-box">
 
@@ -1326,33 +1326,24 @@ function hubungi(){
   );
 
 }
-  /* ================= DOMAIN ================= */
-
-let domainDipilih = "Tanpa Domain Custom";
+  let domainDipilih = "Tanpa Domain Custom";
 let hargaDomain = 0;
 
 function toggleDomain(){
 
-  const options = document.getElementById("domainOptions");
-  const arrow = document.getElementById("domainArrow");
+  let box = document.getElementById("domainOptions");
 
-  if(options.style.display === "none" || options.style.display === ""){
-
-    options.style.display = "block";
-    arrow.textContent = "▲";
-
+  if(box.style.display === "none"){
+    box.style.display = "block";
   }else{
-
-    options.style.display = "none";
-    arrow.textContent = "▼";
-
+    box.style.display = "none";
   }
 
 }
 
-function mauDomain(){
+function tampilHargaDomain(){
 
-  document.getElementById("pilihanHargaDomain").style.display = "block";
+  document.getElementById("hargaDomain").style.display = "block";
 
 }
 
@@ -1362,10 +1353,9 @@ function pilihDomain(nama,harga){
   hargaDomain = harga;
 
   document.getElementById("domainDipilih").innerHTML =
-    "✅ Domain dipilih: <b>" + nama + "</b>";
+    "✅ Dipilih: <b>" + nama + "</b>";
 
 }
-
 </script>
 
 </body>
