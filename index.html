@@ -1336,7 +1336,7 @@ function toggleDomain(){
   const options = document.getElementById("domainOptions");
   const arrow = document.getElementById("domainArrow");
 
-  if(options.style.display === "none"){
+  if(options.style.display === "none" || options.style.display === ""){
 
     options.style.display = "block";
     arrow.textContent = "▲";
@@ -1349,7 +1349,8 @@ function toggleDomain(){
   }
 
 }
-  function mauDomain(){
+
+function mauDomain(){
 
   document.getElementById("pilihanHargaDomain").style.display = "block";
 
